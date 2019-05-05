@@ -1,0 +1,14 @@
+Package: timeregLC
+Type: Package
+Title: Latent class regression on competing risks data
+Description: Fit a direct binomial model (Scheike et al, 2008) with latent classes as covariates to investigate latent class effects on competing risks.
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Imports: stats, timereg, survival, DEoptim, mclust, MASS, mvtnorm, matrixcalc
+Date: 2019-05-05
+Author: Teng Fei, Limin Peng
+Maintainer: Teng Fei <tfei@emory.edu>
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1

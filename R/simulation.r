@@ -27,7 +27,7 @@
 #' p.cif = 0.66
 #' cl=0.19
 #' cu=1.09
-#' dat=raw(500,pi,mu,sigma,gamma,p.cif,cl,cu)
+#' dat=simulation(500,pi,mu,sigma,gamma,p.cif,cl,cu)
 #' @export
 
 simulation <- function(n,p.class,mu,sigma,lambda,p.cif,cl,cu){

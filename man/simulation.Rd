@@ -45,7 +45,7 @@ sigma = list(sigma1,sigma2,sigma3)
 p.cif = 0.66
 cl=0.19
 cu=1.09
-dat=raw(500,pi,mu,sigma,gamma,p.cif,cl,cu)
+dat=simulation(500,pi,mu,sigma,gamma,p.cif,cl,cu)
 }
 \references{
 Fine and Gray (1999). A proportional hazards model for the subdistribution of a competing risk. Journal of the American statistical association 94, 496-509.\cr

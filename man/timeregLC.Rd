@@ -44,7 +44,7 @@ sigma = list(sigma1,sigma2,sigma3)
 p.cif = 0.66
 cl=0.19
 cu=1.09
-dat=raw(500,pi,mu,sigma,gamma,p.cif,cl,cu)
+dat=simulation(500,pi,mu,sigma,gamma,p.cif,cl,cu)
 
 #Fit the model
 event = Event(0,dat$ftime,dat$fstatus)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/timeregLC.r
 \name{timeregLC}
 \alias{timeregLC}
-\title{Latent class regression on competing risks data}
+\title{A Time-Dependent Structural Model Between Latent Classes and Competing Risks Outcomes}
 \usage{
 timeregLC(event, covariates, inference = T, C = NULL, d = 1,
   timepoints = NULL, control.optim = list(reltol = 1e-05, strategy = 2,

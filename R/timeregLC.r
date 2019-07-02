@@ -1,4 +1,4 @@
-#' Latent class regression on competing risks data
+#' A Time-Dependent Structural Model Between Latent Classes and Competing Risks Outcomes
 #'
 #' @description Fits a direct binomial model (Scheike et al, 2008) with latent classes as covariates to investigate latent class effects on competing risks.
 #' @param event Event object created by Event function under timereg package.

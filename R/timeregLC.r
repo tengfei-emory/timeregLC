@@ -18,7 +18,7 @@
 #' @examples
 #'
 #' #The following example specifies all required parameters and generate a dataset.
-#' gamma <- c(0.5,0.5,-1)
+#' lambda <- c(0.5,0.5,-1)
 #' pi = c(0.3,0.35,0.35)
 #' mu = matrix(c(1,1,2.5,2.5,4,4),nrow=2,ncol=3)
 #' sigma1 = matrix(c(0.36,0.27,0.27,0.81),2,2)
@@ -28,7 +28,7 @@
 #' p.cif = 0.66
 #' cl=0.19
 #' cu=1.09
-#' dat=simulation(500,pi,mu,sigma,gamma,p.cif,cl,cu)
+#' dat=simulation(500,pi,mu,sigma,lambda,p.cif,cl,cu)
 #'
 #' #Fit the model
 #' event = Event(0,dat$ftime,dat$fstatus)

@@ -47,6 +47,7 @@ cu=1.09
 dat=simulation(500,pi,mu,sigma,lambda,p.cif,cl,cu)
 
 #Fit the model
+library(timereg)
 event = Event(0,dat$ftime,dat$fstatus)
 covariates=cbind(dat$Y.1,dat$Y.2)
 output <- timeregLC(event,covariates,inference=T,C=NULL,d=1,timepoints=NULL,

@@ -3,18 +3,19 @@
 #' @description Fits a direct binomial model (Scheike et al, 2008) with latent classes as covariates to investigate latent class effects on competing risks.
 #' @param event Event object created by Event function under timereg package.
 #' @param covariates Covariates matrix with n rows, where n is the sample size. Currently only continuous covariates are supported.
-#' @param inference Logical indicator. Whether compute covariance function for the time-varying latent class effect point estimates.
-#' @param C Scalar indicating the number of latent classes. If not specified, then C is established by the finite mixture model (McLachlan and Peel, 2000) with smallest BIC.
+#' @param inference Logical indicator. Whether compute asymptotic covariance function for the time-varying latent class effect point estimates.
+#' @param C Scalar indicating the number of latent classes. If specified as NULL, then C is established by the finite mixture model (McLachlan and Peel, 2000) with smallest BIC.
 #' @param d Specify the cause-d failure type to consider in the competing risk model.
 #' @param timepoints A vector of time points t when the model is fitted to obtain time-varying latent class effect $lambda(t)$. If not specified, then use ten evenly divided points from the first event to the last event.
 #' @param control.optim Controlling parameters for DEoptim package (Mullen et al., 2011).
 #' @param verbose Whether show notifications on completion of each step.
-#' @return Returns point estimates for time-varying latent class effect coefficients $hat{lambda}(t)$. If inference=T, returns a list consisting $hat{lambda}(t)$ and covariance function of $hat{lambda}(t)$.
+#' @return Returns point estimates for time-varying latent class effect coefficients $hat{lambda}(t)$. If inference=T, returns a list consisting $hat{lambda}(t)$ and the asymptotic covariance function of $hat{lambda}(t)$.
 #' @author Teng Fei. Email: tfei@emory.edu
 #' @references Scheike and Zhang (2011). Analyzing competing risk data using the r timereg package. Journal of statistical software 38. \cr
 #' Scheike et al. (2008). Predicting cumulative incidence probability by direct binomial regression. Biometrika 95, 205-220. \cr
 #' Mullen et al. (2011). Deoptim: An r package for global optimization by differential evolution. Journal of Statistical Software 40. \cr
-#' McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons.
+#' McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons. \cr
+#' Fei, Hanfelt and Peng (under revision). Evaluating the Association between Latent Classes and  Competing Risks Outcomes with Multi-Phenotype Data.
 #' @examples
 #'
 #' #The following example specifies all required parameters and generate a dataset.
@@ -34,7 +35,7 @@
 #' library(timereg)
 #' event = Event(0,dat$ftime,dat$fstatus)
 #' covariates=cbind(dat$Y.1,dat$Y.2)
-#' output <- timeregLC(event,covariates,inference=T,C=NULL,d=1,timepoints=NULL,
+#' output <- timeregLC(event,covariates,inference=T,C=3,d=1,timepoints=NULL,
 #'                     control.optim=list(reltol=.00001,strategy=2,itermax=1000,trace=F),
 #'                     verbose=T)
 #'

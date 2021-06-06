@@ -49,7 +49,8 @@ dat=simulation(500,pi,mu,sigma,lambda,p.cif,cl,cu)
 }
 \references{
 Fine and Gray (1999). A proportional hazards model for the subdistribution of a competing risk. Journal of the American statistical association 94, 496-509.\cr
-McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons.
+McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons. \cr
+Fei, Hanfelt and Peng (under revision). Evaluating the Association between Latent Classes and  Competing Risks Outcomes with Multi-Phenotype Data.
 }
 \author{
 Teng Fei. Email: tfei@emory.edu

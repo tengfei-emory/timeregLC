@@ -4,18 +4,25 @@
 \alias{timeregLC}
 \title{A Time-Dependent Structural Model Between Latent Classes and Competing Risks Outcomes}
 \usage{
-timeregLC(event, covariates, inference = T, C = NULL, d = 1,
-  timepoints = NULL, control.optim = list(reltol = 1e-05, strategy = 2,
-  itermax = 1000, trace = F), verbose = T)
+timeregLC(
+  event,
+  covariates,
+  inference = T,
+  C = NULL,
+  d = 1,
+  timepoints = NULL,
+  control.optim = list(reltol = 1e-05, strategy = 2, itermax = 1000, trace = F),
+  verbose = T
+)
 }
 \arguments{
 \item{event}{Event object created by Event function under timereg package.}
 
 \item{covariates}{Covariates matrix with n rows, where n is the sample size. Currently only continuous covariates are supported.}
 
-\item{inference}{Logical indicator. Whether compute covariance function for the time-varying latent class effect point estimates.}
+\item{inference}{Logical indicator. Whether compute asymptotic covariance function for the time-varying latent class effect point estimates.}
 
-\item{C}{Scalar indicating the number of latent classes. If not specified, then C is established by the finite mixture model (McLachlan and Peel, 2000) with smallest BIC.}
+\item{C}{Scalar indicating the number of latent classes. If specified as NULL, then C is established by the finite mixture model (McLachlan and Peel, 2000) with smallest BIC.}
 
 \item{d}{Specify the cause-d failure type to consider in the competing risk model.}
 
@@ -26,7 +33,7 @@ timeregLC(event, covariates, inference = T, C = NULL, d = 1,
 \item{verbose}{Whether show notifications on completion of each step.}
 }
 \value{
-Returns point estimates for time-varying latent class effect coefficients $hat{lambda}(t)$. If inference=T, returns a list consisting $hat{lambda}(t)$ and covariance function of $hat{lambda}(t)$.
+Returns point estimates for time-varying latent class effect coefficients $hat{lambda}(t)$. If inference=T, returns a list consisting $hat{lambda}(t)$ and the asymptotic covariance function of $hat{lambda}(t)$.
 }
 \description{
 Fits a direct binomial model (Scheike et al, 2008) with latent classes as covariates to investigate latent class effects on competing risks.
@@ -50,7 +57,7 @@ dat=simulation(500,pi,mu,sigma,lambda,p.cif,cl,cu)
 library(timereg)
 event = Event(0,dat$ftime,dat$fstatus)
 covariates=cbind(dat$Y.1,dat$Y.2)
-output <- timeregLC(event,covariates,inference=T,C=NULL,d=1,timepoints=NULL,
+output <- timeregLC(event,covariates,inference=T,C=3,d=1,timepoints=NULL,
                     control.optim=list(reltol=.00001,strategy=2,itermax=1000,trace=F),
                     verbose=T)
 
@@ -59,7 +66,8 @@ output <- timeregLC(event,covariates,inference=T,C=NULL,d=1,timepoints=NULL,
 Scheike and Zhang (2011). Analyzing competing risk data using the r timereg package. Journal of statistical software 38. \cr
 Scheike et al. (2008). Predicting cumulative incidence probability by direct binomial regression. Biometrika 95, 205-220. \cr
 Mullen et al. (2011). Deoptim: An r package for global optimization by differential evolution. Journal of Statistical Software 40. \cr
-McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons.
+McLachlan and Peel (2000). Finite Mixture Models. John Wiley & Sons. \cr
+Fei, Hanfelt and Peng (under revision). Evaluating the Association between Latent Classes and  Competing Risks Outcomes with Multi-Phenotype Data.
 }
 \author{
 Teng Fei. Email: tfei@emory.edu

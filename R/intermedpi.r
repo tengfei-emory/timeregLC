@@ -6,7 +6,7 @@ intermedpi <- function(xt,mu,V,prop){
   m = dim(mu)[1]; p = dim(mu)[2]
   gt = matrix(0,p,1)
   for (j in 1:p){
-    gt[j] = prop[j]*dmvnorm(xt,mean=mu[,j],sigma=V[,,j])
+    gt[j] = prop[j]*mvtnorm::dmvnorm(as.vector(xt),mean=as.vector(mu[,j]),sigma=V[,,j])
   }
   param$gt     = gt
   param$alphat = gt/sum(gt)

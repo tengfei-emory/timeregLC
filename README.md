@@ -73,4 +73,4 @@ Please refer to the documentation associated with the package for more details. 
 
 # References
 
-Fei, Hanfelt and Peng (under revision). Evaluating the Association between Latent Classes and Competing Risks Outcomes with Multi-Phenotype Data.
+Fei, Teng, John Hanfelt and Limin Peng (under revision). Evaluating the Association between Latent Classes and Competing Risks Outcomes with Multi-Phenotype Data.

@@ -43,7 +43,7 @@ cu=1.09
 # Main function of simulation. Here sample size is set as 500.
 dat=simulation(500,pi,mu,sigma,lambda,p.cif,cl,cu)
 ```
-Specifically, it returns a data frame of 2 latent classes with 2 baseline covariates (`Y.1` and `Y.2`), time of competing risks (`ftime`), and failure types (`fstatus`). Failure types include type `1`, `2`, censored `0`, or missing `NA`. 
+Specifically, it returns a data frame of 3 latent classes with 2 baseline covariates (`Y.1` and `Y.2`), time of competing risks (`ftime`), and failure types (`fstatus`). Failure types include type `1`, `2`, censored `0`, or missing `NA`. 
 
 ## Model fitting
 

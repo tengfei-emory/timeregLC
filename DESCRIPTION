@@ -3,7 +3,7 @@ Type: Package
 Title: Latent class regression on competing risks data
 Description: Fit a direct binomial model (Scheike et al, 2008) with latent classes as covariates to investigate latent class effects on competing risks.
 Version: 0.1.0
-Depends: R (>= 3.3.0)
+Depends: R (>= 3.5.0)
 Imports: stats, timereg, survival, DEoptim, mclust, MASS, mvtnorm, matrixcalc
 Date: 2019-05-05
 Author: Teng Fei, Limin Peng

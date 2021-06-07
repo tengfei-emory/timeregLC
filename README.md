@@ -7,7 +7,7 @@ A Time-Dependent Structural Model Between Latent Classes and Competing Risks Out
 devtools::install_github("tengfei-emory/timeregLC")
 library(timeregLC)
 ```
-Currently `timeregLC` supports R version >= 3.3.0.
+Currently `timeregLC` supports R version >= 3.5.0.
 
 # Example: analyze a simulated dataset
 

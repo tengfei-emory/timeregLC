@@ -71,3 +71,6 @@ The output list `fit.timeregLC` contains the following information:
 
 Please refer to the documentation associated with the package for more details. Please report issues under this GitHub repository (tengfei-emory/timeregLC).
 
+# References
+
+Fei, Hanfelt and Peng (under revision). Evaluating the Association between Latent Classes and Competing Risks Outcomes with Multi-Phenotype Data.
